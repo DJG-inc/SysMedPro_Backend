@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
-import db from "./../dataBase/initDb.js";
-import Appointment from "./appointments.model.js";
-import { MedHistory } from "./medhistory.model.js";
+import db from "../../database/initDb.js";
+import Appointment from "../featureModels/appointments.model.js";
+import { MedHistory } from "../featureModels/medhistory.model.js";
 
 const Patient = db.define("patient", {
   id: {

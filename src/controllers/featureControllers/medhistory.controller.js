@@ -1,5 +1,5 @@
-import { MedHistory } from "../models/medhistory.model.js";
-import { MedReport } from "../models/medhistory.model.js";
+import { MedHistory } from "../../models/featureModels/medhistory.model.js";
+import { MedReport } from "../../models/featureModels/medhistory.model.js";
 
 //create medhistory con el id del paciente
 export const createMedHistory = async (req, res) => {

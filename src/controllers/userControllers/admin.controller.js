@@ -1,9 +1,9 @@
-import Administrator from "../models/administrator.model.js";
-import createJwt from "../utils/jwt.js";
+import Administrator from "../../models/userModels/administrator.model.js";
+import { createJwt } from "../../utils/jwt.js";
 import bcrypt from "bcrypt";
 import { Op } from "sequelize"
 import crypto from "crypto";
-import { sendMail } from "../utils/nodemailer.js";
+import { sendMail } from "../../utils/nodemailer.js";
 
 export const loginAdmin = async (req, res) => {
     try{

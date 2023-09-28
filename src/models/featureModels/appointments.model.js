@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import db from "./../dataBase/initDb.js";
+import db from "../../database/initDb.js";
 
 const Appointment = db.define("appointments", {
   // PK

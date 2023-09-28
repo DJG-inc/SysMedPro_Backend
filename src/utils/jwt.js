@@ -11,4 +11,18 @@ const createJwt = (id) => {
     }
 };
 
-export default createJwt;
+const renewToken = (expiredToken) => {
+    return new Promise((resolve, reject) => {
+        jwt.verify(expiredToken, process.env.JWT_SECRET, async (err, decoded) => {
+            if (err) {
+                return reject(err);
+            }
+
+            // Emite un nuevo token con una nueva fecha de expiración
+            const newToken = jwt.sign({ id: decoded.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+            resolve(newToken);
+        });
+    });
+};
+
+export { createJwt, renewToken };

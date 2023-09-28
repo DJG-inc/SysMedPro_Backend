@@ -1,7 +1,7 @@
 {
   "name": "sysmedpro-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend de un sistema de gerenciamento de consultas médicas y pacientes",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juan Manuel Conde Aldana - Gustavo Adolfo Camargo - Dillan Alexander Asprilla",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -22,11 +22,15 @@
     "express-validator": "^7.0.1",
     "heap": "^0.2.7",
     "jsonwebtoken": "^9.0.1",
-    "mysql2": "^3.6.0",
     "nodemailer": "^6.9.4",
+    "pg": "^8.11.3",
     "sequelize": "^6.32.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.11",
+    "@babel/node": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
