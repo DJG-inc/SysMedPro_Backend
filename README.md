@@ -20,7 +20,7 @@ Siga estos pasos para clonar el repositorio y ejecutar el backend en su entorno 
    git clone https://github.com/DJG-inc/SysMedPro_Backend.git
 
 3. Navega al directorio del proyecto:
-   cd hospital-management-backend
+   cd SysMedPro_Backend
 
 4. Instala las dependencias utilizando npm:
    npm install
