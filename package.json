@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Backend de un sistema de gerenciamento de consultas médicas y pacientes",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "start": "node src/index.js",
