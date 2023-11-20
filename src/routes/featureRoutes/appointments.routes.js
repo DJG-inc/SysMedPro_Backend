@@ -1,7 +1,5 @@
 import express from 'express';
 import { createAppointment, getAppointmentById, getAllAppointments, updateAppointmentById, deleteAppointmentById, getAllAppointmentsByPatientId, getAllAppointmentsByDoctorId, getAppointmentsConfirmed, getAppointmentsPending, getAppointmentsCancelled, updateAppointentConfirmed, updateAppointentCancelled } from '../../controllers/featureControllers/appointment.controller.js';
-import { check } from 'express-validator';
-import { validateFields } from '../../middlewares/validateFields.js';
 
 const router = express.Router();
 
