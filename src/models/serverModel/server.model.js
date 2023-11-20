@@ -5,7 +5,7 @@ import errorHandler from '../../middlewares/error.handler.js';
 import doctorRoutes from '../../routes/userRoutes/doctor.routes.js';
 import patientRoutes from '../../routes/userRoutes/patient.routes.js';
 import appointmenRoutes from '../../routes/featureRoutes/appointments.routes.js';
-import medicalRHistoryRoutes from '../../routes/featureRoutes/medicalHistory.routes.js';
+import medicalRHistoryRoutes from '../../routes/featureRoutes/medicalhistory.routes.js';
 import adminRoutes from '../../routes/userRoutes/admin.routes.js';
 
 class Server {
