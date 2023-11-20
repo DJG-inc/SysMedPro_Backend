@@ -11,7 +11,7 @@ export const registerPatient = async (req, res) => {
     try{
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
-        
+
         //verify if patient already exists
         const patient = await Patient.findOne({where:{email:req.body.email}});
         if(patient){
@@ -132,7 +132,7 @@ export const getPatientById = async (req, res) => {
                     ],
                 },
             ],
-        }); 
+        });
         if(!patient){
             return res.status(404).json({message:"Patient not found"});
         }
@@ -192,7 +192,7 @@ export const forgotPassword = async (req, res) => {
         await sendMail({
             to:patient.email,
             subject:"Reset your password for SysMedPro",
-            html: `<img src="https://www.logomoose.com/wp-content/uploads/2016/05/medic.jpg" alt="logo" border="0" width="400" height="200" style="display:block;margin-left:auto;margin-right:auto;"/><h1 style="text-align:center;">Reset your password for SysMedPro</h1><p style="text-align:center;">Please click the link below to reset your password.</p><a href="http://localhost:3000/resetpassword/${resetToken}" style="display:block;margin-left:auto;margin-right:auto;text-align:center;">Reset password</a><p style="text-align:center;">If you did not request a password reset, please ignore this email.</p><p style="text-align:center;">Best regards,</p><p style="text-align:center;">SysMedPro team</p>`,
+            html: `<img src="https://www.logomoose.com/wp-content/uploads/2016/05/medic.jpg" alt="logo" border="0" width="400" height="200" style="display:block;margin-left:auto;margin-right:auto;"/><h1 style="text-align:center;">Reset your password for SysMedPro</h1><p style="text-align:center;">Please click the link below to reset your password.</p><a href="https://sysmedpro.netlify.app/resetpassword/${resetToken}" style="display:block;margin-left:auto;margin-right:auto;text-align:center;">Reset password</a><p style="text-align:center;">If you did not request a password reset, please ignore this email.</p><p style="text-align:center;">Best regards,</p><p style="text-align:center;">SysMedPro team</p>`,
         });
 
         return res.status(200).json({message:"Email sent"});
@@ -230,7 +230,7 @@ export const resetPassword = async (req, res) => {
             resetPasswordExpire:null,
         }, {where:{id:patient.id}});
 
-        //enviar email de confirmacion 
+        //enviar email de confirmacion
         await sendMail({
             to:patient.email,
             subject:"Your password has been changed",
@@ -263,7 +263,7 @@ export const filterPatientsForStatusConfirmed = async (req, res) => {
                             as: "medreports",
                         },
                     ],
-                },  
+                },
             ],
         });
         return res.status(200).json({patients});
@@ -290,7 +290,7 @@ export const filterPatientsForStatusPending = async (req, res) => {
                             as: "medreports",
                         },
                     ],
-                },  
+                },
             ],
         });
         return res.status(200).json({patients});
@@ -329,7 +329,7 @@ export const filterPatientsForStatusConfirmedWithPriority = async (req, res) => 
                             as: "medreports",
                         },
                     ],
-                },  
+                },
             ],
         });
         patients.forEach(patient => {

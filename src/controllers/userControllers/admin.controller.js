@@ -73,7 +73,7 @@ export const forgotPassword = async (req, res) => {
         await sendMail({
             to:admin.email,
             subject:"Reset your password for SysMedPro",
-            html: `<img src="https://www.logomoose.com/wp-content/uploads/2016/05/medic.jpg" alt="logo" border="0" width="400" height="200" style="display:block;margin-left:auto;margin-right:auto;"/><h1 style="text-align:center;">Reset your password for SysMedPro</h1><p style="text-align:center;">You are receiving this email because you (or someone else) have requested the reset of the password for your account.</p><p style="text-align:center;">Please click on the following link, or paste this into your browser to complete the process within 10 minutes of receiving it:</p><p style="text-align:center;">http://localhost:3000/resetpassword/${resetToken}</p><p style="text-align:center;">If you did not request this, please ignore this email and your password will remain unchanged.</p><p style="text-align:center;">Best regards,</p><p style="text-align:center;">SysMedPro team</p>`
+            html: `<img src="https://www.logomoose.com/wp-content/uploads/2016/05/medic.jpg" alt="logo" border="0" width="400" height="200" style="display:block;margin-left:auto;margin-right:auto;"/><h1 style="text-align:center;">Reset your password for SysMedPro</h1><p style="text-align:center;">You are receiving this email because you (or someone else) have requested the reset of the password for your account.</p><p style="text-align:center;">Please click on the following link, or paste this into your browser to complete the process within 10 minutes of receiving it:</p><p style="text-align:center;">https://sysmedpro.netlify.app/resetpassword/${resetToken}</p><p style="text-align:center;">If you did not request this, please ignore this email and your password will remain unchanged.</p><p style="text-align:center;">Best regards,</p><p style="text-align:center;">SysMedPro team</p>`
         });
 
         return res.status(200).json({message:"Email sent"});
@@ -111,7 +111,7 @@ export const resetPassword = async (req, res) => {
             resetPasswordExpire:null,
         }, {where:{id:admin.id}});
 
-        //enviar email de confirmacion 
+        //enviar email de confirmacion
         await sendMail({
             to:admin.email,
             subject:"Your password has been changed",

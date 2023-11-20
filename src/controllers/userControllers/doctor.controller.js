@@ -17,7 +17,7 @@ export const registerDoctor = async (req, res) => {
             return res.status(400).json({ error: "Email already exists" });
         }
 
-        const newDoctor = await Doctor.create({ 
+        const newDoctor = await Doctor.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,
@@ -137,7 +137,7 @@ export const forgotPassword = async (req, res) => {
         await sendMail({
             to:doctor.email,
             subject:"Reset your password for SysMedPro",
-            html:`<img src="https://www.logomoose.com/wp-content/uploads/2016/05/medic.jpg" alt="logo" border="0" width="400" height="200" style="display:block;margin-left:auto;margin-right:auto;"/><h1 style="text-align:center;">Reset your password for SysMedPro</h1><p style="text-align:center;">Please click the link below to reset your password</p><a href="http://localhost:3000/resetpassword/${resetToken}" style="display:block;margin-left:auto;margin-right:auto;text-align:center;">Reset password</a><p style="text-align:center;">Best regards,</p><p style="text-align:center;">SysMedPro team</p>`
+            html:`<img src="https://www.logomoose.com/wp-content/uploads/2016/05/medic.jpg" alt="logo" border="0" width="400" height="200" style="display:block;margin-left:auto;margin-right:auto;"/><h1 style="text-align:center;">Reset your password for SysMedPro</h1><p style="text-align:center;">Please click the link below to reset your password</p><a href="https://sysmedpro.netlify.app/resetpassword/${resetToken}" style="display:block;margin-left:auto;margin-right:auto;text-align:center;">Reset password</a><p style="text-align:center;">Best regards,</p><p style="text-align:center;">SysMedPro team</p>`
         });
 
         return res.status(200).json({message:"Email sent"});
@@ -175,7 +175,7 @@ export const resetPassword = async (req, res) => {
             resetPasswordExpire:null,
         }, {where:{id:doctor.id}});
 
-        //enviar email de confirmacion 
+        //enviar email de confirmacion
         await sendMail({
             to:doctor.email,
             subject:"Your password has been changed",
