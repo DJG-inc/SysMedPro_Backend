@@ -30,9 +30,8 @@ router.post('/confirm/:id', [
     validateFields
 ], validateJwt.isPatient, confirmPatient);
 
-router.get('/:id', validateJwt.isAdministratorOrDoctor, getPatientById);
-
 router.get('/all', validateJwt.isAdministratorOrDoctor, getPatients);
+router.get('/:id', validateJwt.isAdministratorOrDoctor, getPatientById);
 
 router.put('/reject/:id', validateJwt.isAdministrator, patientRejection);
 

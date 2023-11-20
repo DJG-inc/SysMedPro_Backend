@@ -24,9 +24,10 @@ router.post( "/login", [
     validateFields,
 ], loginDoctor); // Login Doctor
 
+router.get( "/all", validateJwt.isAdministratorOrDoctorOrPatient, getDoctors); // Get Doctors
+  
 router.get( "/:id", validateJwt.isAdministratorOrDoctorOrPatient, getDoctorById); // Get Doctor by ID
 
-router.get( "/all", validateJwt.isAdministratorOrDoctorOrPatient, getDoctors); // Get Doctors  
 
 router.post('/forgot-password', [
   check('email', 'Email is required').isEmail(),

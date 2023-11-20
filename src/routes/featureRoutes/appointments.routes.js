@@ -6,8 +6,8 @@ import { validateFields } from '../../middlewares/validateFields.js';
 const router = express.Router();
 
 router.post('/create/:id', createAppointment);
-router.get('/:id', getAppointmentById);
 router.get('/all', getAllAppointments);
+router.get('/:id', getAppointmentById);
 router.put('/:id', updateAppointmentById);
 router.delete('/:id', deleteAppointmentById);
 router.get('/patient/:id', getAllAppointmentsByPatientId);
